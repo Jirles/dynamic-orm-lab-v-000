@@ -62,7 +62,7 @@ class InteractiveRecord
     col = attr_hash.keys[0].to_s 
     val = attr_hash.values[0]
     
-    DB[:conn].execute("SELECT * FROM #{table_name} WHERE #{col} = #{val}")
+    DB[:conn].execute("SELECT * FROM #{table_name} WHERE #{col} = ?", val)
   end 
   
 end
